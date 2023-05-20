@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "slime",
+	"version": "${version}",
+	"name": "Slime",
+	"description": "Craftable Slime from new item",
+	"authors": [
+		"ZergV"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/slime/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.zergv.slime.SlimeInit"
+		],
+		"client": [
+          "com.zergv.slime.SlimeInitClient"
+		]
+	},
+	"mixins": [
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "Craftable Gunpowder"
+	}
+}
