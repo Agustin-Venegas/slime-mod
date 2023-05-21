@@ -2,14 +2,14 @@
 	"schemaVersion": 1,
 	"id": "slime",
 	"version": "${version}",
-	"name": "Slime",
+	"name": "Slime Mod",
 	"description": "Craftable Slime from new item",
 	"authors": [
 		"ZergV"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/craftable-slime-for-fabric",
+		"sources": "https://github.com/Agustin-Venegas/slime-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/slime/icon.png",

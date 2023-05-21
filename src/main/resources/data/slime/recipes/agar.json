@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:fire_coral"
+  },
+  "result": "slime:agar",
+  "experience": 1,
+  "cookingtime": 100
+}

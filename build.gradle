@@ -42,6 +42,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation include("eu.pb4:polymer-core:0.4.0+1.19.4")
+	modImplementation include('xyz.nucleoid:server-translations-api:2.0.0-beta.2+1.19.4-pre2')
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

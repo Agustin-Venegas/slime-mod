@@ -4,10 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -21,12 +18,18 @@ public class SlimeInit implements ModInitializer {
     // That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("slime");
 
+    public static final Item GELATIN = registerItem("gelatin", new Gelatin(
+            new FabricItemSettings().food(FoodComponents.DRIED_KELP))
+    );
+
+    public static final Item AGAR = registerItem("agar", new Agar(
+            new FabricItemSettings().food(FoodComponents.DRIED_KELP))
+    );
+
     public static final Item registerItem(String name, Item item)
     {
-        return Registry.register(Registries.ITEM, new Identifier("gunpowder", name), item);
+        return Registry.register(Registries.ITEM, new Identifier("slime", name), item);
     }
-
-    public static final Item GELATIN = registerItem("gelatin", new Gelatin(new FabricItemSettings()));
 
     @Override
     public void onInitialize() {
@@ -36,7 +39,7 @@ public class SlimeInit implements ModInitializer {
                         new Identifier("slime", "ingredients"))
                 .displayName(Text.literal("Ingredients"))
                 .icon(() -> new ItemStack(Items.DIAMOND))
-                .entries((enabledFeatures, entries) -> { entries.add(GELATIN); })
+                .entries((enabledFeatures, entries) -> { entries.add(GELATIN); entries.add(AGAR);})
                 .build();
     }
 }
