@@ -7,8 +7,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -33,21 +31,15 @@ public class SlimeInit implements ModInitializer {
         return Registry.register(Registries.ITEM, new Identifier("slime", name), item);
     }
 
-    public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(
-            RegistryKeys.ITEM_GROUP,
-            new Identifier("slime", "ingredients")
-    );
-
     @Override
     public void onInitialize() {
         LOGGER.info("Loading Slime Mod Items");
 
-        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP,
-        FabricItemGroup.builder()
+        ItemGroup ITEM_GROUP = FabricItemGroup.builder(
+                        new Identifier("slime", "ingredients"))
                 .displayName(Text.literal("Ingredients"))
                 .icon(() -> new ItemStack(Items.DIAMOND))
                 .entries((enabledFeatures, entries) -> { entries.add(GELATIN); entries.add(AGAR);})
-                .build()
-        );
+                .build();
     }
 }
